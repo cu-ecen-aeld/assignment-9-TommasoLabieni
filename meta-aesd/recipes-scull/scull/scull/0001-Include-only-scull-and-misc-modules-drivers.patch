@@ -1,0 +1,23 @@
+From 4a7931ca34c0c7e6dfda7cf9176fe7a4dbf0358b Mon Sep 17 00:00:00 2001
+From: Tommaso Labieni <259650@studenti.unimore.it>
+Date: Sun, 14 Apr 2024 22:48:31 +0200
+Subject: [PATCH] Include only scull and misc-modules drivers
+
+---
+ Makefile | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 7b08c49..c4f2e2e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,5 @@
+ 
+-SUBDIRS =  misc-progs misc-modules \
+-           skull scull scullc scullp lddbus sculld scullv shortprint simple tty \
+-	   pci usb\
+-	   sbull snull short
++SUBDIRS =  misc-modules scull
+ 
+ all: subdirs
+ 
