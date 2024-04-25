@@ -15,7 +15,7 @@ SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabi
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "8ed85371df82462f070e51c1c6dc9ba71881220d"
+SRCREV = "e540083e522dc34e30a8e1fe2cd8c6683c3dadc6"
 
 S = "${WORKDIR}/git/aesd-char-driver"
 
@@ -24,7 +24,7 @@ inherit module
 MODULES_INSTALL_TARGET = "install"
 
 EXTRA_OEMAKE:append:task-install = " -C ${STAGING_KERNEL_DIR} M=${S}/aesd-char-driver/"
-EXTRA_OEMAKE += "KERNELDIR=${STAGING_KERNEL_DIR}"
+EXTRA_OEMAKE += "KERNELDIR=${STAGING_KERNEL_DIR} DEBUG=y"
 
 inherit update-rc.d
 
