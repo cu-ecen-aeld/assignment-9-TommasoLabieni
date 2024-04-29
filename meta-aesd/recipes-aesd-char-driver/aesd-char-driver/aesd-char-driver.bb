@@ -10,12 +10,14 @@
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni.git;protocol=ssh;branch=master \
-           file://manage_aesdchar_driver.sh"
+# SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni.git;protocol=ssh;branch=master \
+#            file://manage_aesdchar_driver.sh"
+SRC_URI = "git:////home/tommaso/Documents/EL/Course_2/assignments-3-and-later-TommasoLabieni/;protocol=file;branch=master \
+            file://manage_aesdchar_driver.sh"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
-SRCREV = "c3ff2741fd020804a44128b5aa1a98d598cb529b"
+SRCREV = "ba3ef8410ac30fc3e040db0ea4214ce774f49284"
 
 S = "${WORKDIR}/git/aesd-char-driver"
 

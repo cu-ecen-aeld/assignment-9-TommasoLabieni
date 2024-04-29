@@ -4,11 +4,12 @@ inherit update-rc.d
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni;protocol=ssh;branch=master"
+# SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni;protocol=ssh;branch=master"
+SRC_URI = "git:////home/tommaso/Documents/EL/Course_2/assignments-3-and-later-TommasoLabieni/;protocol=file;branch=master"
 
 PV = "1.0+git${SRCPV}"
 
-SRCREV = "3fb02ae0ab20a55a76b8ece404bf19babc69b3c8"
+SRCREV = "51cb34f72cade8a1e9c78fa0e4a43d076ca2b58f"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
@@ -18,7 +19,7 @@ S = "${WORKDIR}/git/server"
 
 # TODO: Add the aesdsocket application and any other files you need to install
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
-FILES_${PN} += "${bindir}/aesdsocket-start-stop.sh ${bindir}/aesdsocket"
+FILES_${PN} += "${bindir}/aesdsocket-start-stop.sh ${bindir}/aesdsocket ${bindir}/test_ioctl"
 
 TARGET_LDFLAGS += "-lpthread -lrt"
 
@@ -44,4 +45,5 @@ do_install () {
 	install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d/
 	install -m 0755 ${S}/aesdsocket ${D}${bindir}/
+	install -m 0755 ${S}/test_ioctl ${D}${bindir}/
 }
