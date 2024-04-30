@@ -4,12 +4,11 @@ inherit update-rc.d
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-# SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni;protocol=ssh;branch=master"
-SRC_URI = "git:////home/tommaso/Documents/EL/Course_2/assignments-3-and-later-TommasoLabieni/;protocol=file;branch=master"
+SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-TommasoLabieni;protocol=ssh;branch=master"
 
 PV = "1.0+git${SRCPV}"
 
-SRCREV = "51cb34f72cade8a1e9c78fa0e4a43d076ca2b58f"
+SRCREV = "4b91cd50e8014c83b3bec5dcc2cf6e8e315af7a1"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
